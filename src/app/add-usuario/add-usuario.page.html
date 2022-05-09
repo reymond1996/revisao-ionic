@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+      <!-- <ion-button>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
+    <ion-title *ngIf="!id">Cadastrar Usuário</ion-title>
+    <ion-title *ngIf="id">Editar Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!--campo nome -->
+  <ion-item>
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="nome"></ion-input>
+  </ion-item>
+  <!--campo usuario-->
+  <ion-item>
+    <ion-label position="floating">Usuário</ion-label>
+    <ion-input type="text" [(ngModel)]="usuario"></ion-input>
+  </ion-item>
+  <!--campo senha -->
+  <ion-item>
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="senha"></ion-input>
+  </ion-item>
+  <!--campo de seleçãp de nível -->
+  <ion-item>
+    <ion-label>Nível</ion-label>
+    <ion-select placeholder="Selecione" [(ngModel)]="nivel">
+      <ion-select-option value="admin">Administrador</ion-select-option>
+      <ion-select-option value="professor">Professor</ion-select-option>
+      <ion-select-option value="aluno">Aluno</ion-select-option>
+      <ion-select-option value="recepcionista">Recepcionista</ion-select-option>
+      <ion-select-option value="secretaria">Secretaria</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button *ngIf="!id" color="success" expand="block" (click)="cadastrar()">
+    Adicionar
+  </ion-button>
+  <ion-button *ngIf="id" color="primary" expand="block" (click)="editar()">
+    Atualizar
+  </ion-button>
+
+
+
+</ion-content>

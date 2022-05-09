@@ -1,0 +1,22 @@
+CREATE DATABASE accessDb;
+USE accessDb;
+
+
+CREATE TABLE `usuarios` (
+`id` int(11) NOT NULL primary key auto_increment,
+`nome` varchar(35) NOT NULL,
+`usuario` varchar(30) NOT NULL unique,
+`senha` varchar(32) NOT NULL, -- criptografado MD5
+`senha_original` varchar(20) NOT NULL,
+`nivel` varchar(20) NOT NULL
+);
+
+
+
+
+
+ select * from usuarios
+ 
+ -- alter table usuarios add ativo bit null;
+
+-- update usuarios set ativo = 0 where id =2;
